@@ -6,7 +6,7 @@
 
 ## Notes
 
-- You will NOT need a MySQL Database for this exercise.
+- A MySQL database is not used. All data stored locally
 - To run locally, use
 
       npm install
