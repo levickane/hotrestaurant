@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Star Wars Characters (DATA)
 
-const tables = [
+let tables = [
   {
     customerName: 'Ahmed',
     customerEmail: 'afhaque89@gmail.com',
@@ -22,7 +22,7 @@ const tables = [
     phoneNumber: '979-587-0887'
   }
 ];
-const waitlist = [
+let waitlist = [
   {
     customerName: 'Saima',
     customerEmail: 'saima@gmail.com',
@@ -61,11 +61,10 @@ app.post('/api/tables', (req, res) => {
   res.json(true);
 });
 
-// app.post('/api/waitlist', (req, res) => {
-//   const waitlistList = req.body;
-//   //   console.log(newWaitlist);
-//   //   waitlist.push(newWaitlist);
-//   res.json(waitlistList);
-// });
+app.post('/api/clear', (req, res) => {
+  tables = [];
+  waitlist = [];
+  res.json({ ok: true });
+});
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
